@@ -1,16 +1,21 @@
 const express = require("express");
+const {adminAuth} = require("./middleware/auth");
 
 const app = express();
 
-// This will only handle GET call to /user
-app.get("/user/:userId/:name/:password", (req, res)=>{
-    console.log(req.params);
-    res.send({firstName: "Gulshan", lastName: "Yadav"});
+// Handle Auth Middleware for all GET POST, .... requests
+app.use("/admin", adminAuth);
+
+app.get("/admin/getAllData", (req, res) => {
+    res.send("All Data sent");
+});
+
+app.get('/user', (req, res)=>{
+    res.send("Data is sent");
 })
 
-// this will match all the HTTP method API calls to /
-app.use("/", (req, res)=>{
-    res.send("Namaste Gulshan");
+app.get("/admin/deleteUser", (req, res)=>{
+    res.send("Deleted a user");
 })
 
 app.listen(3000, ()=>{
