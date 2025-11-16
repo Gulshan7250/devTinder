@@ -62,3 +62,8 @@ Write request handles for /test, /hello
 - Add default
 - Improve the DB schema - PUT all appropriate valisations on each field in  Schema
 - Add timestamps to the userSchema
+- Add API level validation on Patch request & Signup post api
+- DATA Sanitizing - Add API validation for each field
+- Install validator
+- Explore validator library function and Use validator funcs for password, emails
+- NEVER TRUST req.body
