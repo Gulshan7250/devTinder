@@ -67,3 +67,7 @@ Write request handles for /test, /hello
 - Install validator
 - Explore validator library function and Use validator funcs for password, emails
 - NEVER TRUST req.body
+
+- Validate data in Signup API
+- Install bcrypt package
+- Create PasswordHash using bcrypt.hash & save the user is encrypted password
