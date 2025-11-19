@@ -71,3 +71,16 @@ Write request handles for /test, /hello
 - Validate data in Signup API
 - Install bcrypt package
 - Create PasswordHash using bcrypt.hash & save the user is encrypted password
+- Create login API
+- Compare passwords and throw errors if email or password is invalid
+
+- install cookie-parser
+- just send a dummy cookie to user
+- create GET /profile API and check if you get the cookie back
+ In login API, create a JWT token
+- Install jsonwebtoken
+- In login API, after email and password validation, create a JWT token and send it to user in cookie
+- read the cookies inside your profile API and find the logged in user
+- userAuth Middleware
+- Add the userAuth middle ware in profile API and a new sendConnectionRequest API
+- Set the expiry of JWT token and cookies to 7 days
