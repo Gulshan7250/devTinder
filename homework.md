@@ -84,3 +84,17 @@ Write request handles for /test, /hello
 - userAuth Middleware
 - Add the userAuth middle ware in profile API and a new sendConnectionRequest API
 - Set the expiry of JWT token and cookies to 7 days
+- Create userSchema method to getJWT()
+- Create userSchema method to comparepassword(passwordInputByUser)
+
+- Explore tinder APIs
+- Create a list of all API you can think of in Dev Tinder
+- Group multiple routes under respective routers
+- Read documentation for express.Router
+- Create routes folder for managing auth, profiles, request routers
+- Create authRouter, profileRouter, requestRouter
+- Import these routers in app.js
+- Create POST /logout API
+- Create PATCH /profile/edit
+- Create PATCH /profile/password API => forgot password API
+- Make you validate all data in every POST, PATCH apis
