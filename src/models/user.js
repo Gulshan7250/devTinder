@@ -41,10 +41,9 @@ const userSchema = new mongoose.Schema({
     },
     gender: {
         type: String,
-        validate(value){
-            if(!["male", "female", "others"]){
-                throw new Error("Gender data is not valid");
-            }
+        enum: {
+            values: ["male", "females", "other"],
+            message: `{VALUE} is incorrect status type`,
         },
     },
     about:{
@@ -52,7 +51,7 @@ const userSchema = new mongoose.Schema({
         default: "This is default description of user !!",
     },
     skills:{
-        type:Array,
+        type:[String],
     }
 },
 {

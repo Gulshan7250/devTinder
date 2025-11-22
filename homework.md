@@ -98,3 +98,14 @@ Write request handles for /test, /hello
 - Create PATCH /profile/edit
 - Create PATCH /profile/password API => forgot password API
 - Make you validate all data in every POST, PATCH apis
+- 
+- Create Connection Request Schema
+- Send Connection Request API
+- Proper validation of Data
+- Think about All Corner cases
+- $or query $and query in mongoose
+- schema.pre("save") function
+- Read more about indexes in MongoDB
+- Why do we need index in DB?
+- What is the advantages and disadvantage of creating?
+- Read this article about compound indexes - 
