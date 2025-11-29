@@ -52,6 +52,10 @@ const userSchema = new mongoose.Schema({
     },
     skills:{
         type:[String],
+    },
+    photoUrl:{
+        type: String,
+        default: "https://i.pravatar.cc/300"
     }
 },
 {
@@ -61,7 +65,7 @@ const userSchema = new mongoose.Schema({
 userSchema.methods.getJWT = async function (){
     const user = this;
 
-    const token = await jwt.sign({_id: user._id}, "DEV@Tinder$790",{
+    const token =await jwt.sign({_id: user._id}, "DEV@Tinder$790",{
         expiresIn: "7d",
     });
     return token;
