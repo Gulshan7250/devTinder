@@ -3,6 +3,7 @@ const requestRouter = express.Router();
 const {userAuth} = require("../middleware/auth");
 const ConnectionRequest = require("../models/connectionRequest");
 const User = require("../models/user");
+const sendEmail = require("../utils/sendEmail");
 
 requestRouter.post("/request/send/:status/:toUserId", userAuth, async (req, res) => {
     try{
@@ -37,6 +38,9 @@ requestRouter.post("/request/send/:status/:toUserId", userAuth, async (req, res)
         });
 
         const data = await connectionRequest.save();
+
+        const emailRes = await sendEmail.run();
+        console.log(emailRes);
 
         res.json({
             message: 
