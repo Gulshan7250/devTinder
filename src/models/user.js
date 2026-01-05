@@ -42,9 +42,16 @@ const userSchema = new mongoose.Schema({
     gender: {
         type: String,
         enum: {
-            values: ["male", "females", "other"],
+            values: ["male", "female", "other"],
             message: `{VALUE} is incorrect status type`,
         },
+    },
+    isPremium: {
+        type: Boolean,
+        default: false,
+    },
+    membershipType: {
+        type: String,
     },
     about:{
         type: String,
