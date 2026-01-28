@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema({
     gender: {
         type: String,
         enum: {
-            values: ["male", "female", "other"],
+            values: ["Male", "female", "other"],
             message: `{VALUE} is incorrect status type`,
         },
     },
