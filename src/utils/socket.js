@@ -21,8 +21,6 @@ io.on("connection", (socket) => {
 
     socket.on("joinChat", ({firstName, userId, targetUserId})=> {
         const roomId = getSecretRoomId(userId, targetUserId);
-
-        console.log(firstName +" Joined Room :" + roomId);
         socket.join(roomId);
     });
 
@@ -47,7 +45,7 @@ io.on("connection", (socket) => {
                 text,
             })
             await chat.save();
-            io.to(roomId).emit("messageReceived", {firstName, text});
+            io.to(roomId).emit("messageReceived", {senderId: userId, text});
         }catch(err){
             console.log(err);
         }
